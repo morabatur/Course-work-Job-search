@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMain">
+   <children>
+      <MenuBar layoutX="232.0" layoutY="200.0" prefHeight="31.0" prefWidth="600.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Зберегти угоду" />
+                  <MenuItem mnemonicParsing="false" onAction="#callExit" text="Закрити" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Змінити">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Роботодавця..." />
+                  <MenuItem mnemonicParsing="false" text="Кандидата..." />
+                  <MenuItem mnemonicParsing="false" text="Резюме..." />
+                  <MenuItem mnemonicParsing="false" text="Вакансію..." />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Додати">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#callAddEmployers" text="Роботодавця" />
+                  <MenuItem mnemonicParsing="false" onAction="#callAddCandidates" text="Кандидата" />
+                  <MenuItem mnemonicParsing="false" text="Резюме" />
+                  <MenuItem mnemonicParsing="false" text="Вакансію" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Дії">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#callJobSearch" text="Пошук роботи" />
+                  <MenuItem mnemonicParsing="false" text="Заключити угоду" />
+                  <MenuItem mnemonicParsing="false" onAction="#callBueroIncome" text="Сформувати звіт" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Допомога">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Про автора" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutX="28.0" layoutY="32.0" prefHeight="368.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <tabs>
+          <Tab text="Вакансії">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableVacancy" layoutX="14.0" layoutY="14.0" prefHeight="329.0" prefWidth="457.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="name" prefWidth="75.0" text="Компанія" />
+                            <TableColumn fx:id="kindOfActivity" prefWidth="75.0" text="Діяльність" />
+                              <TableColumn fx:id="possition" prefWidth="75.0" text="Позиція" />
+                              <TableColumn fx:id="qualification" prefWidth="75.0" text="Кваліфікація" />
+                              <TableColumn fx:id="profession" prefWidth="75.0" text="Професія" />
+                              <TableColumn fx:id="salary" prefWidth="75.0" text="Зарплата" />
+                              <TableColumn fx:id="dateOfPublic" prefWidth="75.0" text="Дата публікації" />
+                          </columns>
+                        </TableView>
+                        <ComboBox fx:id="comboBoxCompany" layoutX="466.0" layoutY="35.0" prefHeight="31.0" prefWidth="120.0" promptText="Будь-які" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="35.0" />
+                        <Text layoutX="496.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Компанії" AnchorPane.rightAnchor="43.765625" AnchorPane.topAnchor="14.0" />
+                        <Button layoutX="494.0" layoutY="284.0" mnemonicParsing="false" onAction="#button_SerchVacancy" text="Пошук!" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="35.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Резюме">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table_Summary" layoutX="51.0" layoutY="53.0" prefHeight="329.0" prefWidth="458.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="fullName" prefWidth="75.0" text="ПІБ" />
+                            <TableColumn fx:id="qualificationSummary" prefWidth="75.0" text="Кваліфікація" />
+                              <TableColumn fx:id="professionSummary" prefWidth="75.0" text="Професія" />
+                              <TableColumn fx:id="expectedSalary" prefWidth="75.0" text="Очікувана ЗП" />
+                              <TableColumn fx:id="datePublicSummary" prefWidth="75.0" text="Дата публікації" />
+                          </columns>
+                        </TableView>
+                        <Text layoutX="501.0810546875" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сфера" AnchorPane.rightAnchor="55.046875" AnchorPane.topAnchor="10.0" />
+                        <ComboBox fx:id="comboBox_KindUnity" layoutX="475.0" layoutY="35.0" prefHeight="31.0" prefWidth="111.0" promptText="Всі" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="35.0" />
+                        <Button layoutX="498.0" layoutY="284.0" mnemonicParsing="false" onAction="#button_SerchSummary" text="Пошук!" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="31.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Угоди">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table_contracts" layoutX="142.0" layoutY="65.0" prefHeight="329.0" prefWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="id_contracts" prefWidth="75.0" text="Номер угоди" />
+                            <TableColumn fx:id="date_contracts" prefWidth="75.0" text="Дата укладання" />
+                              <TableColumn fx:id="name_Employers" prefWidth="75.0" text="Компанія" />
+                              <TableColumn fx:id="name_candidates" prefWidth="75.0" text="Кандидат" />
+                              <TableColumn fx:id="position_name" prefWidth="75.0" text="Позиція" />
+                              <TableColumn fx:id="feddback" prefWidth="75.0" text="Плата" />
+                              <TableColumn fx:id="agent" prefWidth="75.0" text="Агент" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="501.0" layoutY="149.0" mnemonicParsing="false" onAction="#button_refreshTable" text="Оновити!" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="149.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

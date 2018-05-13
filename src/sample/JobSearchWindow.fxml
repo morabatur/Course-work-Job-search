@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJobSearch">
+   <children>
+      <ComboBox fx:id="comboBoxCandidates" layoutX="18.0" layoutY="355.0" prefHeight="31.0" prefWidth="401.0" promptText="Обрати" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="18.0" />
+      <TableView fx:id="jobTable" layoutX="40.0" layoutY="43.0" prefHeight="349.0" prefWidth="600.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="company" prefWidth="75.0" text="Компанаія" />
+          <TableColumn fx:id="position" prefWidth="75.0" text="Позиція" />
+            <TableColumn fx:id="salary" prefWidth="75.0" text="Зарплата" />
+            <TableColumn fx:id="qualification" prefWidth="75.0" text="Кваліфікація" />
+        </columns>
+      </TableView>
+      <Button layoutX="490.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonSearchJob" text="Пошук" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="43.0" />
+   </children>
+</AnchorPane>

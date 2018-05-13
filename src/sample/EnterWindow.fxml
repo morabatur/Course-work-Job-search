@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerEnter">
+   <children>
+      <Button layoutX="274.0" layoutY="228.0" mnemonicParsing="false" onAction="#btn_Enter" text="Вхід!" />
+      <TextField fx:id="field_NameSurname" focusTraversable="false" layoutX="207.0" layoutY="115.0" promptText="Прізвище та ім'я">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+      <TextField fx:id="field_ID" focusTraversable="false" layoutX="207.0" layoutY="169.0" promptText="ID працівника" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
